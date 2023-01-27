@@ -1,0 +1,27 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <title>Strong Encryption</title>
+</head>
+<body>
+    <p style="margin-bottom: 1rem;">Every letter is mapped with some random 4 character string and { } are mapped with random 3 character string</p>
+    
+    <p>Can You decode this:   <b>y1Si hvRh cY1S IJCY fff 64d2 y2Am ni7W y2Am FdNq XZIc QCy8 ofMA ZLMt ni7W 9idG y2Am eDMi ofMA 9idG y2Am 9idG rOl0 y2Am O8fI rOl0 sss</b> </p>
+    <form action="" method="POST">
+        {% csrf_token %}
+
+        <input name="msg" type="text">
+        <button>Submit</button>
+
+    </form>
+    
+    <p>{{encoded_text}}</p>
+
+</body>
+</html>
